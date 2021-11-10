@@ -33,19 +33,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\C\Projekte\OS
+CMAKE_SOURCE_DIR = C:\Users\lenna\CLionProjects\OS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\C\Projekte\OS\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\lenna\CLionProjects\OS\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles\OS.dir\depend.make
@@ -57,21 +57,21 @@ include CMakeFiles\OS.dir\flags.make
 
 CMakeFiles\OS.dir\main.c.obj: CMakeFiles\OS.dir\flags.make
 CMakeFiles\OS.dir\main.c.obj: ..\main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C\Projekte\OS\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/OS.dir/main.c.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\OS.dir\main.c.obj /FdCMakeFiles\OS.dir\ /FS -c E:\C\Projekte\OS\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lenna\CLionProjects\OS\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/OS.dir/main.c.obj"
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\OS.dir\main.c.obj /FdCMakeFiles\OS.dir\ -c -- C:\Users\lenna\CLionProjects\OS\main.c
 <<
 
 CMakeFiles\OS.dir\main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/OS.dir/main.c.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe > CMakeFiles\OS.dir\main.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\C\Projekte\OS\main.c
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe > CMakeFiles\OS.dir\main.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\lenna\CLionProjects\OS\main.c
 <<
 
 CMakeFiles\OS.dir\main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/OS.dir/main.c.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\OS.dir\main.c.s /c E:\C\Projekte\OS\main.c
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\OS.dir\main.c.s /c C:\Users\lenna\CLionProjects\OS\main.c
 <<
 
 # Object files for target OS
@@ -84,10 +84,11 @@ OS_EXTERNAL_OBJECTS =
 OS.exe: CMakeFiles\OS.dir\main.c.obj
 OS.exe: CMakeFiles\OS.dir\build.make
 OS.exe: CMakeFiles\OS.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\C\Projekte\OS\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable OS.exe"
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\OS.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\OS.dir\objects1.rsp @<<
- /out:OS.exe /implib:OS.lib /pdb:E:\C\Projekte\OS\cmake-build-debug\OS.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\lenna\CLionProjects\OS\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable OS.exe"
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\OS.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\OS.dir\objects1.rsp @<<
+ /out:OS.exe /implib:OS.lib /pdb:C:\Users\lenna\CLionProjects\OS\cmake-build-debug\OS.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
+	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/lenna/Documents/CPP/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/lenna/CLionProjects/OS/cmake-build-debug/OS.exe -installedDir C:/Users/lenna/Documents/CPP/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 
 # Rule to build all files generated by this target.
 CMakeFiles\OS.dir\build: OS.exe
@@ -98,6 +99,6 @@ CMakeFiles\OS.dir\clean:
 .PHONY : CMakeFiles\OS.dir\clean
 
 CMakeFiles\OS.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" E:\C\Projekte\OS E:\C\Projekte\OS E:\C\Projekte\OS\cmake-build-debug E:\C\Projekte\OS\cmake-build-debug E:\C\Projekte\OS\cmake-build-debug\CMakeFiles\OS.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\lenna\CLionProjects\OS C:\Users\lenna\CLionProjects\OS C:\Users\lenna\CLionProjects\OS\cmake-build-debug C:\Users\lenna\CLionProjects\OS\cmake-build-debug C:\Users\lenna\CLionProjects\OS\cmake-build-debug\CMakeFiles\OS.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles\OS.dir\depend
 

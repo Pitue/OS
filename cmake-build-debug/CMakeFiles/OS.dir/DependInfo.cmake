@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/C/Projekte/OS/main.c" "E:/C/Projekte/OS/cmake-build-debug/CMakeFiles/OS.dir/main.c.obj"
+  "C:/Users/lenna/CLionProjects/OS/main.c" "C:/Users/lenna/CLionProjects/OS/cmake-build-debug/CMakeFiles/OS.dir/main.c.obj"
   )
-set(CMAKE_C_COMPILER_ID "MSVC")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
