@@ -365,3 +365,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /cmake-build-release/
 /cmake-build-debug/
+/cmake-build-debug/
