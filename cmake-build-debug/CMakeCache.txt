@@ -15,7 +15,7 @@
 ########################
 
 //Path to a program.
-CMAKE_AR:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe
+CMAKE_AR:FILEPATH=C:/Program Files/LLVM/bin/llvm-lib.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -35,11 +35,17 @@ CMAKE_CODEBLOCKS_MAKE_ARGUMENTS:STRING=
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:UNINITIALIZED=C:/Program Files/LLVM/bin/clang-cl.exe
+
+//LLVM archiver
+CMAKE_C_COMPILER_AR:FILEPATH=C:/Program Files/LLVM/bin/llvm-ar.exe
+
+//Generate index for LLVM archive
+CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/Program Files/LLVM/bin/llvm-ranlib.exe
 
 //Flags used by the C compiler during all build types.
-CMAKE_C_FLAGS:STRING=/DWIN32 /D_WINDOWS
+CMAKE_C_FLAGS:STRING=-m64
 
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=/Zi /Ob0 /Od /RTC1
@@ -78,7 +84,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/OS
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe
+CMAKE_LINKER:FILEPATH=C:/Program Files/LLVM/bin/lld-link.exe
 
 //Program used to build from makefiles.
 CMAKE_MAKE_PROGRAM:STRING=nmake
@@ -105,6 +111,9 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
 //Path to a program.
 CMAKE_MT:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mt.exe
+
+//Path to a program.
+CMAKE_NM:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/nm.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -180,6 +189,9 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=E:/Cpp/vcpkg/scripts/buildsystems/vcpkg.cmake
+
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -191,6 +203,52 @@ OS_BINARY_DIR:STATIC=E:/C/Projekte/OS/cmake-build-debug
 
 //Value Computed by CMake
 OS_SOURCE_DIR:STATIC=E:/C/Projekte/OS
+
+//Automatically copy dependencies into the output directory for
+// executables.
+VCPKG_APPLOCAL_DEPS:BOOL=ON
+
+//The directory which contains the installed libraries for each
+// triplet
+VCPKG_INSTALLED_DIR:PATH=E:/Cpp/vcpkg/installed
+
+//The path to the vcpkg manifest directory.
+VCPKG_MANIFEST_DIR:PATH=
+
+//Use manifest mode, as opposed to classic mode.
+VCPKG_MANIFEST_MODE:BOOL=OFF
+
+//Appends the vcpkg paths to CMAKE_PREFIX_PATH, CMAKE_LIBRARY_PATH
+// and CMAKE_FIND_ROOT_PATH so that vcpkg libraries/packages are
+// found after toolchain/system libraries/packages.
+VCPKG_PREFER_SYSTEM_LIBS:BOOL=OFF
+
+//Vcpkg target triplet (ex. x86-windows)
+VCPKG_TARGET_TRIPLET:STRING=x64-windows
+
+//Enables messages from the VCPKG toolchain for debugging purposes.
+VCPKG_VERBOSE:BOOL=OFF
+
+//(experimental) Automatically copy dependencies into the install
+// target directory for executables. Requires CMake 3.14.
+X_VCPKG_APPLOCAL_DEPS_INSTALL:BOOL=OFF
+
+//(experimental) Add USES_TERMINAL to VCPKG_APPLOCAL_DEPS to force
+// serialization.
+X_VCPKG_APPLOCAL_DEPS_SERIALIZED:BOOL=OFF
+
+//Path to a program.
+Z_VCPKG_BUILTIN_POWERSHELL_PATH:FILEPATH=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
+
+//Path to a program.
+Z_VCPKG_CL:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
+
+//Path to a program.
+Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
+
+//The directory which contains the installed libraries for each
+// triplet
+_VCPKG_INSTALLED_DIR:PATH=E:/Cpp/vcpkg/installed
 
 
 ########################
@@ -217,6 +275,10 @@ CMAKE_CPACK_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2021.2.2/bin/cmake
 CMAKE_CTEST_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2021.2.2/bin/cmake/win/bin/ctest.exe
 //ADVANCED property for variable: CMAKE_C_COMPILER
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_AR
+CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
+CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -243,8 +305,10 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=CodeBlocks
+//C compiler system defined macros
+CMAKE_EXTRA_GENERATOR_C_SYSTEM_DEFINED_MACROS:INTERNAL=
 //C compiler system include directories
-CMAKE_EXTRA_GENERATOR_C_SYSTEM_INCLUDE_DIRS:INTERNAL=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+CMAKE_EXTRA_GENERATOR_C_SYSTEM_INCLUDE_DIRS:INTERNAL=
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=NMake Makefiles
 //Generator instance identifier.
@@ -272,6 +336,8 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_NM
+CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //Platform information initialized
@@ -317,6 +383,22 @@ CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_TOOLCHAIN_FILE
+CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Install the dependencies listed in your manifest:
+//\n    If this is off, you will have to manually install your dependencies.
+//\n    See https://github.com/microsoft/vcpkg/tree/master/docs/specifications/manifests.md
+// for more info.
+//\n
+VCPKG_MANIFEST_INSTALL:INTERNAL=OFF
+//ADVANCED property for variable: VCPKG_VERBOSE
+VCPKG_VERBOSE-ADVANCED:INTERNAL=1
+//Making sure VCPKG_MANIFEST_MODE doesn't change
+Z_VCPKG_CHECK_MANIFEST_MODE:INTERNAL=OFF
+//The path to the PowerShell implementation to use.
+Z_VCPKG_POWERSHELL_PATH:INTERNAL=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
+//Vcpkg root directory
+Z_VCPKG_ROOT_DIR:INTERNAL=E:/Cpp/vcpkg
 

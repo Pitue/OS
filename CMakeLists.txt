@@ -3,4 +3,7 @@ project(OS C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(OS main.c)
+add_executable(OS
+        "inc/include.h"
+
+        "./src/main.c")

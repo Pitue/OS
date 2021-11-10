@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/OS.dir/main.c.obj"
+  "CMakeFiles/OS.dir/src/main.c.obj"
   "OS.exe"
   "OS.exe.manifest"
   "OS.lib"
